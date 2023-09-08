@@ -174,9 +174,12 @@ class SMPLlayer(nn.Module):
             else:
                 self.NUM_POSES = 66 + 15 * 3 * 2
         elif self.model_type == 'mano':
-            self.num_pca_comps = kwargs['num_pca_comps']
-            self.use_pca = kwargs['use_pca']
-            self.use_flat_mean = kwargs['use_flat_mean']
+            # self.num_pca_comps = kwargs['num_pca_comps']
+            # self.use_pca = kwargs['use_pca']
+            # self.use_flat_mean = kwargs['use_flat_mean']
+            self.num_pca_comps = 6
+            self.use_pca = Trues
+            self.use_flat_mean = True
             if self.use_pca:
                 self.NUM_POSES = self.num_pca_comps + 3
             else:
